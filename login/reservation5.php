@@ -151,216 +151,211 @@ $pnr_num = $_SESSION['PNR_num'];
             </ul>
         </div>
     </nav>
-    <div class="card" id="makepdf">
-    <div class="card" id="content">
-        <h5 class="card-header">Reservation Successful</h5>
-        <div class="card-body">
-            <center>
-                <h5 class="card-title" style="font-family: Montserrat"> Happy Journey !</h5>
-                <hr><br>
-                <h5>Train Information:</h5><br>
-
-                <table id="reservation" border="2px solid black" width="100%">
-                    <div class="row">
-                        <tr class="head">
-                            <td>
-                                <div class="spacing">Train Name: </div>
-                            </td>
-
-                            <td>
-                                <div class="spacing">Train No: </div>
-                            </td>
-
-                            <td>
-                                <div class="spacing">Source: </div>
-                            </td>
-
-                            <td>
-                                <div class="spacing">Arrival Time: </div>
-                            </td>
-
-                            <td>
-                                <div class="spacing">Destination: </div>
-                            </td>
-
-                            <td>
-                                <div class="spacing">Departure Time: </div>
-                            </td>
-
-                            <td>
-                                <div class="spacing">PNR : </div>
-                            </td>
-                            <td>
-                                <div class="spacing">
-                                    <h6>Chart Prepared <i class="fas fa-tasks"></i> </h6>
-                                    <small class="text-muted">(Synced few minutes ago)</small>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="data">
-                            <td><?php
-                                $Username = $_SESSION['Username'];
-                                $sql = "SELECT Train_Name FROM train_info where Source like '$from' AND Destination like '$to'";
-                                $res = mysqli_query($connection, $sql);
-                                if (mysqli_num_rows($res) > 0) {
-                                    while ($row = mysqli_fetch_assoc($res)) {
-                                        echo $row['Train_Name'];
-                                    }
-                                } ?></td>
-                            <td><?php
-                                $Username = $_SESSION['Username'];
-                                $sql = "SELECT Train_No FROM train_info where Source like '$from' AND Destination like '$to'";
-                                $res = mysqli_query($connection, $sql);
-                                if (mysqli_num_rows($res) > 0) {
-                                    while ($row = mysqli_fetch_assoc($res)) {
-                                        echo $row['Train_No'];
-                                    }
-                                } ?></td>
-                            <td><?php
-                                $Username = $_SESSION['Username'];
-                                $sql = "SELECT Source FROM train_info where Source like '$from' AND Destination like '$to'";
-                                $res = mysqli_query($connection, $sql);
-                                if (mysqli_num_rows($res) > 0) {
-                                    while ($row = mysqli_fetch_assoc($res)) {
-                                        echo $row['Source'];
-                                    }
-                                } ?></td>
-                            <td><?php
-                                $Username = $_SESSION['Username'];
-                                $sql = "SELECT Arrival_Time FROM train_info where Source like '$from' AND Destination like '$to'";
-                                $res = mysqli_query($connection, $sql);
-                                if (mysqli_num_rows($res) > 0) {
-                                    while ($row = mysqli_fetch_assoc($res)) {
-                                        echo $row['Arrival_Time'];
-                                    }
-                                } ?></td>
-                            <td><?php
-                                $Username = $_SESSION['Username'];
-                                $sql = "SELECT Destination FROM train_info where Source like '$from' AND Destination like '$to'";
-                                $res = mysqli_query($connection, $sql);
-                                if (mysqli_num_rows($res) > 0) {
-                                    while ($row = mysqli_fetch_assoc($res)) {
-                                        echo $row['Destination'];
-                                    }
-                                } ?></td>
-                            <td><?php
-                                $Username = $_SESSION['Username'];
-                                $sql = "SELECT Departure_Time FROM train_info where Source like '$from' AND Destination like '$to'";
-                                $res = mysqli_query($connection, $sql);
-                                if (mysqli_num_rows($res) > 0) {
-                                    while ($row = mysqli_fetch_assoc($res)) {
-                                        echo $row['Departure_Time'];
-                                    }
-                                } ?></td>
-                            <td><?php
-                                $Username = $_SESSION['Username'];
-                                $sql = "SELECT PNR_num FROM passenger_info where user_id like '$Username' AND Source like '$from' AND Destination like '$to'";
-                                $res = mysqli_query($connection, $sql);
-                                if (mysqli_num_rows($res) > 0) {
-                                    while ($row = mysqli_fetch_assoc($res)) {
-                                        echo $row['PNR_num'];
-                                    }
-                                } ?></td>
-                        </tr>
-                    </div>
-                </table>
-                <br>
-                <hr><br><br>
-                <h5>Passenger Information:</h5><br>
-                <table id="ppassenger" border="2px solid black" width="100%">
-                    <div class="row">
-                        <tr class="head">
-                            <td>
-                                <div class="spacing"> Username: </div>
-                            </td>
-                            <td>
-                                <div class="spacing"> Departure Date: </div>
-                            </td>
-                            <td>
-                                <div class="spacing"> Passenger Name: </div>
-                            </td>
-                            <td>
-                                <div class="spacing"> Preference: </div>
-                            </td>
-                            <td>
-                                <div class="spacing"> Accomodation: </div>
-                            </td>
-                            <td>
-                                <div class="spacing"> Passenger Contact: </div>
-                            </td>
-                        </tr>
-                        <tr class="data">
-                            <td><?php echo $Username; ?>
-                            </td>
-                            <td><?php
-                                $Username = $_SESSION['Username'];
-                                $sql = "SELECT Date FROM passenger_info where user_id like '$Username' AND Source like '$from' AND Destination like '$to'";
-                                $res = mysqli_query($connection, $sql);
-                                if (mysqli_num_rows($res) > 0) {
-                                    while ($row = mysqli_fetch_assoc($res)) {
-                                        echo $row['Date'];
-                                    }
-                                } ?></td>
-                            <td><?php
-                                $Username = $_SESSION['Username'];
-                                $sql = "SELECT Passenger_name FROM passenger_info where user_id like '$Username' AND Source like '$from' AND Destination like '$to'";
-                                $res = mysqli_query($connection, $sql);
-                                if (mysqli_num_rows($res) > 0) {
-                                    while ($row = mysqli_fetch_assoc($res)) {
-                                        echo $row['Passenger_name'];
-                                    }
-                                } ?></td>
-                            <td><?php
-                                $Username = $_SESSION['Username'];
-                                $sql = "SELECT Preference FROM passenger_info where user_id like '$Username' AND Source like '$from' AND Destination like '$to'";
-                                $res = mysqli_query($connection, $sql);
-                                if (mysqli_num_rows($res) > 0) {
-                                    while ($row = mysqli_fetch_assoc($res)) {
-                                        echo $row['Preference'];
-                                    }
-                                } ?></td>
-                            <td><?php
-                                $Username = $_SESSION['Username'];
-                                $sql = "SELECT Accomodation FROM passenger_info where user_id like '$Username' AND Source like '$from' AND Destination like '$to'";
-                                $res = mysqli_query($connection, $sql);
-                                if (mysqli_num_rows($res) > 0) {
-                                    while ($row = mysqli_fetch_assoc($res)) {
-                                        echo $row['Accomodation'];
-                                    }
-                                } ?></td>
-                            <td><?php
-                                $Username = $_SESSION['Username'];
-                                $sql = "SELECT Contact FROM passenger_info where user_id like '$Username' AND Source like '$from' AND Destination like '$to'";
-                                $res = mysqli_query($connection, $sql);
-                                if (mysqli_num_rows($res) > 0) {
-                                    while ($row = mysqli_fetch_assoc($res)) {
-                                        echo $row['Contact'];
-                                    }
-                                } ?></td>
-                        </tr>
-                    </div>
-                </table>
-            </center>
-            <div class="spacing">
-                <h6><i class="fas fa-check-circle"></i> Confirmed</h6>
-                            </div>
-                <button id="button" style="background-color: #4CAF50;">Download Ticket</button>
-            </div>
-            </div>
-            <div style="margin-left: 35%;">
-                <lord-icon src="https://cdn.lordicon.com//lupuorrc.json" trigger="loop" colors="primary:#2516c7,secondary:#30c9e8" stroke="70" style="width:250px;height:250px;">
-                </lord-icon>
-            </div>
-            <center>
+    <div id="makepdf">
+        <div class="card" id="content">
+            <h5 class="card-header">Reservation Successful</h5>
+            <div class="card-body">
+                <center>
+                    <h5 class="card-title" style="font-family: Montserrat"> Happy Journey !</h5>
+                    <hr><br>
+                    <h5>Train Information:</h5><br>
+                    <table id="reservation" border="2px solid black" width="100%">
+                        <div class="row">
+                            <tr class="head">
+                                <td>
+                                    <div class="spacing">Train Name: </div>
+                                </td>
+                                <td>
+                                    <div class="spacing">Train No: </div>
+                                </td>
+                                <td>
+                                    <div class="spacing">Source: </div>
+                                </td>
+                                <td>
+                                    <div class="spacing">Arrival Time: </div>
+                                </td>
+                                <td>
+                                    <div class="spacing">Destination: </div>
+                                </td>
+                                <td>
+                                    <div class="spacing">Departure Time: </div>
+                                </td>
+                                <td>
+                                    <div class="spacing">PNR : </div>
+                                </td>
+                                <td>
+                                    <div class="spacing">
+                                        <h6>Chart Prepared <i class="fas fa-tasks"></i> </h6>
+                                        <small class="text-muted">(Synced few minutes ago)</small>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="data">
+                                <td><?php
+                                    $Username = $_SESSION['Username'];
+                                    $sql = "SELECT Train_Name FROM train_info where Source like '$from' AND Destination like '$to'";
+                                    $res = mysqli_query($connection, $sql);
+                                    if (mysqli_num_rows($res) > 0) {
+                                        while ($row = mysqli_fetch_assoc($res)) {
+                                            echo $row['Train_Name'];
+                                        }
+                                    } ?></td>
+                                <td><?php
+                                    $Username = $_SESSION['Username'];
+                                    $sql = "SELECT Train_No FROM train_info where Source like '$from' AND Destination like '$to'";
+                                    $res = mysqli_query($connection, $sql);
+                                    if (mysqli_num_rows($res) > 0) {
+                                        while ($row = mysqli_fetch_assoc($res)) {
+                                            echo $row['Train_No'];
+                                        }
+                                    } ?></td>
+                                <td><?php
+                                    $Username = $_SESSION['Username'];
+                                    $sql = "SELECT Source FROM train_info where Source like '$from' AND Destination like '$to'";
+                                    $res = mysqli_query($connection, $sql);
+                                    if (mysqli_num_rows($res) > 0) {
+                                        while ($row = mysqli_fetch_assoc($res)) {
+                                            echo $row['Source'];
+                                        }
+                                    } ?></td>
+                                <td><?php
+                                    $Username = $_SESSION['Username'];
+                                    $sql = "SELECT Arrival_Time FROM train_info where Source like '$from' AND Destination like '$to'";
+                                    $res = mysqli_query($connection, $sql);
+                                    if (mysqli_num_rows($res) > 0) {
+                                        while ($row = mysqli_fetch_assoc($res)) {
+                                            echo $row['Arrival_Time'];
+                                        }
+                                    } ?></td>
+                                <td><?php
+                                    $Username = $_SESSION['Username'];
+                                    $sql = "SELECT Destination FROM train_info where Source like '$from' AND Destination like '$to'";
+                                    $res = mysqli_query($connection, $sql);
+                                    if (mysqli_num_rows($res) > 0) {
+                                        while ($row = mysqli_fetch_assoc($res)) {
+                                            echo $row['Destination'];
+                                        }
+                                    } ?></td>
+                                <td><?php
+                                    $Username = $_SESSION['Username'];
+                                    $sql = "SELECT Departure_Time FROM train_info where Source like '$from' AND Destination like '$to'";
+                                    $res = mysqli_query($connection, $sql);
+                                    if (mysqli_num_rows($res) > 0) {
+                                        while ($row = mysqli_fetch_assoc($res)) {
+                                            echo $row['Departure_Time'];
+                                        }
+                                    } ?></td>
+                                <td><?php
+                                    $Username = $_SESSION['Username'];
+                                    $sql = "SELECT PNR_num FROM passenger_info where user_id like '$Username' AND Source like '$from' AND Destination like '$to'";
+                                    $res = mysqli_query($connection, $sql);
+                                    if (mysqli_num_rows($res) > 0) {
+                                        while ($row = mysqli_fetch_assoc($res)) {
+                                            echo $row['PNR_num'];
+                                        }
+                                    } ?></td>
+                            </tr>
+                        </div>
+                    </table>
+                    <br>
+                    <hr><br><br>
+                    <h5>Passenger Information:</h5><br>
+                    <table id="ppassenger" border="2px solid black" width="100%">
+                        <div class="row">
+                            <tr class="head">
+                                <td>
+                                    <div class="spacing"> Username: </div>
+                                </td>
+                                <td>
+                                    <div class="spacing"> Departure Date: </div>
+                                </td>
+                                <td>
+                                    <div class="spacing"> Passenger Name: </div>
+                                </td>
+                                <td>
+                                    <div class="spacing"> Preference: </div>
+                                </td>
+                                <td>
+                                    <div class="spacing"> Accomodation: </div>
+                                </td>
+                                <td>
+                                    <div class="spacing"> Passenger Contact: </div>
+                                </td>
+                            </tr>
+                            <tr class="data">
+                                <td><?php echo $Username; ?>
+                                </td>
+                                <td><?php
+                                    $Username = $_SESSION['Username'];
+                                    $sql = "SELECT Date FROM passenger_info where user_id like '$Username' AND Source like '$from' AND Destination like '$to'";
+                                    $res = mysqli_query($connection, $sql);
+                                    if (mysqli_num_rows($res) > 0) {
+                                        while ($row = mysqli_fetch_assoc($res)) {
+                                            echo $row['Date'];
+                                        }
+                                    } ?></td>
+                                <td><?php
+                                    $Username = $_SESSION['Username'];
+                                    $sql = "SELECT Passenger_name FROM passenger_info where user_id like '$Username' AND Source like '$from' AND Destination like '$to'";
+                                    $res = mysqli_query($connection, $sql);
+                                    if (mysqli_num_rows($res) > 0) {
+                                        while ($row = mysqli_fetch_assoc($res)) {
+                                            echo $row['Passenger_name'];
+                                        }
+                                    } ?></td>
+                                <td><?php
+                                    $Username = $_SESSION['Username'];
+                                    $sql = "SELECT Preference FROM passenger_info where user_id like '$Username' AND Source like '$from' AND Destination like '$to'";
+                                    $res = mysqli_query($connection, $sql);
+                                    if (mysqli_num_rows($res) > 0) {
+                                        while ($row = mysqli_fetch_assoc($res)) {
+                                            echo $row['Preference'];
+                                        }
+                                    } ?></td>
+                                <td><?php
+                                    $Username = $_SESSION['Username'];
+                                    $sql = "SELECT Accomodation FROM passenger_info where user_id like '$Username' AND Source like '$from' AND Destination like '$to'";
+                                    $res = mysqli_query($connection, $sql);
+                                    if (mysqli_num_rows($res) > 0) {
+                                        while ($row = mysqli_fetch_assoc($res)) {
+                                            echo $row['Accomodation'];
+                                        }
+                                    } ?></td>
+                                <td><?php
+                                    $Username = $_SESSION['Username'];
+                                    $sql = "SELECT Contact FROM passenger_info where user_id like '$Username' AND Source like '$from' AND Destination like '$to'";
+                                    $res = mysqli_query($connection, $sql);
+                                    if (mysqli_num_rows($res) > 0) {
+                                        while ($row = mysqli_fetch_assoc($res)) {
+                                            echo $row['Contact'];
+                                        }
+                                    } ?></td>
+                            </tr>
+                        </div>
+                    </table>
+                </center>
                 <div class="spacing">
-                    <a href="registered.php" class="btn btn-outline-primary"><i class="fas fa-clipboard-check"></i> Timetable</a>
-                    <a href="registered.php" class="btn btn-outline-primary"><i class="fas fa-subway"></i> Train Status</a>
-                    <a href="registered.php" class="btn btn-outline-primary"><i class="fas fa-ticket-alt"></i> PNR Status</a>
+                    <h6><i class="fas fa-check-circle"></i> Confirmed</h6>
                 </div>
-            </center>
+                <div style="margin-left: 40%;">
+                    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                    <lord-icon
+                        src="https://cdn.lordicon.com/lupuorrc.json"
+                        trigger="loop"
+                        style="width:250px;height:250px">
+                    </lord-icon>
+                </div>
+            </div>
         </div>
     </div>
-    <div id="editor"></div>
+    <center>
+        <div class="spacing">
+            <a href="registered.php" class="btn btn-outline-primary"><i class="fas fa-clipboard-check"></i> Timetable</a>
+            <a href="registered.php" class="btn btn-outline-primary"><i class="fas fa-subway"></i> Train Status</a>
+            <a href="registered.php" class="btn btn-outline-primary"><i class="fas fa-ticket-alt"></i> PNR Status</a>
+            <button id="button" class="btn btn-outline-primary">Download Ticket</button>
+        </div>
+    </center>
 
     <!-----More----->
     <div class="featu" style="width:95%; margin:0 auto;">
@@ -451,20 +446,12 @@ $pnr_num = $_SESSION['PNR_num'];
         </div>
         <!-- Copyright -->
     </div>
-</footer>
-
-    
-
-        
-
+</footer> 
         <script>
         var button = document.getElementById("button");
         var makepdf = document.getElementById("makepdf");
-  
         button.addEventListener("click", function () {
             html2pdf().from(makepdf).save();
         });
     </script>
-
-
 </html>

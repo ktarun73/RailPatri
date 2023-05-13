@@ -160,7 +160,7 @@
                         <li><i class="fas fa-square" color="orange"></i> Contact Us</li>
                     </ul>
                     <p>
-                        This website is created by Abhinav Verma , Sai jeevan , Snehashish Samanta and Satyam Deepu in Industrial Summer Training 20ITB-22 Website Development and Database Management System organized by Chandigarh University.
+                    This website is created by Tarun Kumar, Himanshu Aggarwal, Akansha Soni and Bharti Chaudhary
                     </p>
                     <p></p>
                 </div>
@@ -168,39 +168,35 @@
 
             <div class="card-deck">
                 <div class="card">
-                    <img class="card-img-top" src="../img/abhinav.png" alt="Abhinav's Image">
                     <div class="card-body">
                         <h5 class="card-title">Frontend + Backend </h5><br>
                         <hr>
-                        <p class="card-text">UID: 20BCS9258</p>
+                        <p class="card-text">UID: 21MCC2036</p>
                         <p class="card-text">Section / Group : 31 / C </p>
                     </div>
                 </div>
                 <div class="card">
-                    <img class="card-img-top" src="../img/Jeevan.png" alt="Sai Jeevan's Image">
                     <div class="card-body">
                         <h5 class="card-title"> Created Presentation, Documentation as well as Front-End</h5>
                         <hr>
-                        <p class="card-text">UID: 20BCS9225</p>
+                        <p class="card-text">UID: 21MCC200</p>
                         <p class="card-text">Section / Group :31 / B </p>
                     </div>
                 </div>
                 <div class="card">
-                    <img class="card-img-top" src="../img/snehashish.png" alt="Snehashish Samanta's Image">
                     <div class="card-body">
                         <h5 class="card-title">Documentation + Backend</h5><br>
                         <hr>
-                        <p class="card-text">UID: 20BCS9228</p>
+                        <p class="card-text">UID: 21MCC</p>
                         <p class="card-text">Section / Group : 31 / B </p>
                     </div>
                 </div>
 
                 <div class="card">
-                    <img class="card-img-top" src="../img/satyam.png" alt="Satyam deepu's Image">
                     <div class="card-body">
                         <h5 class="card-title">Frontend + Backend </h5><br>
                         <hr>
-                        <p class="card-text">UID: 20BCS9274 </p>
+                        <p class="card-text">UID: 21MCC </p>
                         <p class="card-text"> Section / Group : 31 / C </p>
                     </div>
                 </div>

@@ -303,35 +303,33 @@ if (isset($_POST['submit'])) {
                 <h3 class="card-title">Passenger Details</h3>
             </center>
             <div class="form-group row">
-                <label for="inputUsername3" class="col-sm-2 col-form-label">Passenger Name</label>
+                <label for="inputUsername3" class="col-sm-2 col-form-label">Passenger Name<b style="color:red;">*</b></label>
                 <div class="col-sm-10">
                     <input type="text" name="Passenger_Name" class="form-control" id="inputUsername3" placeholder="Passenger Name" required>
                 </div>
             </div>
 
             <div class="form-group row">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">Age</label>
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Age<b style="color:red;">*</b></label>
                 <div class="col-sm-10">
                     <input type="number" name="Age" class="form-control" id="inputEmail3" placeholder="Age" required>
                 </div>
             </div>
 
             <div class="form-group row">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">Gender</label>
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Gender<b style="color:red;">*</b></label>
                 <div class="col-sm-10">
-                    <select class="form-control" name="Gender" valye="Gender" required>
-                        <option>Select Gender</option>
+                    <select class="form-control" name="Gender" required>
                         <option value="Male" name="Male">Male</option>
                         <option value="Female" name="Female">Female</option>
-                        <option value="Other" name="Other">Other</option>
                     </select>
                 </div>
             </div>
 
             <div class="form-group row">
-                <label for="inputPassword3" class="col-sm-2 col-form-label">Contact</label>
+                <label for="inputPassword3" class="col-sm-2 col-form-label">Contact<b style="color:red;">*</b></label>
                 <div class="col-sm-10">
-                    <input type="number" name="Contact" class="form-control" id="inputPassword3" placeholder="Contact">
+                    <input type="number" name="Contact" class="form-control" id="inputPassword3" placeholder="Contact" required>
                 </div>
             </div>
 
@@ -343,9 +341,9 @@ if (isset($_POST['submit'])) {
             </div>
 
             <div class="form-group row">
-                <label for="inputPassword3" class="col-sm-2 col-form-label">Date</label>
+                <label for="inputPassword3" class="col-sm-2 col-form-label">Date<b style="color:red;">*</b></label>
                 <div class="col-sm-10">
-                    <input type="date" name="Date" class="form-control" id="inputPassword3" placeholder="Date">
+                    <input type="date" name="Date" class="form-control" id="inputPassword3" placeholder="Date" required>
                 </div>
             </div>
 

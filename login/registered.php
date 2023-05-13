@@ -550,8 +550,7 @@
             <!-- Section: Text -->
             <section class="mb-4">
                 <p>
-                    This website is created by Tarun Kumar, Himanshu Aggarwal, Akansha Soni and Bharti Chaudhary
-                </p>
+                    This website is created by Tarun Kumar, Himanshu Aggarwal, Akansha Soni and Bharti Chaudhary</p>
             </section>
 
             <!-- Copyright -->
